@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7ab3d1a-3568-4d95-b127-f313991e52ee" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/douyin_sdk.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/douyin_sdk.gemspec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>expired_at</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,7 +50,7 @@
       <workItem from="1593397934274" duration="7426000" />
       <workItem from="1593590671790" duration="400000" />
       <workItem from="1594192639035" duration="6257000" />
-      <workItem from="1594802237009" duration="1265000" />
+      <workItem from="1594802237009" duration="1670000" />
     </task>
     <servers />
   </component>

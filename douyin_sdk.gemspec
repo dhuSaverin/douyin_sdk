@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["dhuSaverin"]
   spec.email         = ["sjtdhu@163.com"]
 
-  spec.summary       = %q{douyin ruby sdk}
-  spec.description   = %q{douyin ruby sdk}
+  spec.summary       = %q{Douyin SDK for Ruby}
+  spec.description   = %q{Douyin SDK for Ruby}
   spec.homepage      = "https://github.com/dhuSaverin/douyin_sdk"
   spec.license       = "MIT"
 
