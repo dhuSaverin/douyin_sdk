@@ -1,8 +1,6 @@
 # DouyinSdk
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/douyin_sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Douyin SDK for Ruby
 
 ## Installation
 
@@ -21,23 +19,59 @@ Or install it yourself as:
     $ gem install douyin_sdk
 
 ## Usage
+1.配置 ClientKey 和 ClientSecret
 
-TODO: Write usage instructions here
+```ruby
+$client = DouyinSdk::Client.new(client_key, client_secret)
+```
 
-## Development
+* 抖音Oauth 2授权
+    
+1.获取用户授权链接：
+```ruby
+$client.auth_code_url(redirect_uri, scope)
+```
+  reirect_url为回调接收地址，scope为要获取的权限，详见官方文档
+  
+2.用户扫码授权后，根据code获取用户access_token，open_id和refresh_token等信息
+```ruby
+$client.access_token(code)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+* 刷新access_token
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+$client.refresh_token(refresh_token)
+```
 
+* 获取用户公开信息
+
+```ruby
+$client.user_info(access_token, open_id)
+```
+
+* 获取粉丝列表(需要在开放平台申请用户管理接口权限)
+
+```ruby
+$client.fan_list(access_token, open_id)
+```
+* 查询授权账号视频数据
+
+```ruby
+$client.video_list(access_token, open_id)
+```
+
+* 查询指定视频数据
+
+    item_id为抖音视频id
+```ruby
+$client.video_data(access_token, open_id, item_id)
+```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/douyin_sdk. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dhuSaverin/douyin_sdk. This project is intended to be a safe, welcoming space for collaboration.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
-
-Everyone interacting in the DouyinSdk project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/douyin_sdk/blob/master/CODE_OF_CONDUCT.md).
