@@ -14,7 +14,7 @@ module DouyinSdk
 
     def initialize(client_key, client_secret)
       @client_key = client_key
-      @client_key = client_secret
+      @client_secret = client_secret
     end
 
 
