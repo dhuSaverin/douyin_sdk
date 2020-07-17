@@ -8,6 +8,8 @@ module DouyinSdk
   class Client
 
     include Oauth
+    include User
+    include Video
 
     attr_accessor :client_key, :client_secret, :scope # Time.now + expires_in
     # attr_accessor :access_token
