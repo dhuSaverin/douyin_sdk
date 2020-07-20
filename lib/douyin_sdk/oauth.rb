@@ -18,7 +18,7 @@ module DouyinSdk
 
     #刷新access_token
     def refresh_token(refresh_token)
-      res = Typhoeus.get(DouyinSdk.endpoint_url(REFRESH_TOKEN + "?refresh_token=#{refresh_token}&client_key=#{CLIENT_KEY}&grant_type=refresh_token"))
+      res = Typhoeus.get(DouyinSdk.endpoint_url(REFRESH_TOKEN + "?refresh_token=#{refresh_token}&client_key=#{client_key}&grant_type=refresh_token"))
       JSON.parse(res.body)
     end
 
