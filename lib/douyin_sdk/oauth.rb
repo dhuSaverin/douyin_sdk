@@ -22,7 +22,7 @@ module DouyinSdk
     end
 
     #刷新refresh_token
-    def renew_refresh_token(client_key, refresh_token)
+    def renew_refresh_token(refresh_token)
       DouyinSdk.http_get(RENEW_REFRESH_TOKEN + "?client_key=#{client_key}&refresh_token=#{refresh_token}")
     end
 
