@@ -4,6 +4,7 @@ module DouyinSdk
     OAUTH_CONNECT = '/platform/oauth/connect/'
     ACCESS_TOKEN = '/oauth/access_token/'
     REFRESH_TOKEN = '/oauth/refresh_token/'
+    RENEW_REFRESH_TOKEN = '/oauth/renew_refresh_token/'
 
     #获取授权连接
     def auth_code_url(redirect_uri, scope="user_info")
@@ -12,15 +13,20 @@ module DouyinSdk
 
     #获取access_token
     def access_token(code)
-      res = Typhoeus.post(DouyinSdk.endpoint_url(ACCESS_TOKEN + "?client_key=#{client_key}&client_secret=#{client_secret}&code=#{code}&grant_type=authorization_code"))
-      JSON.parse(res.body)
+      DouyinSdk.http_get(ACCESS_TOKEN + "?client_key=#{client_key}&client_secret=#{client_secret}&code=#{code}&grant_type=authorization_code")
     end
 
     #刷新access_token
     def refresh_token(refresh_token)
-      res = Typhoeus.get(DouyinSdk.endpoint_url(REFRESH_TOKEN + "?refresh_token=#{refresh_token}&client_key=#{client_key}&grant_type=refresh_token"))
-      JSON.parse(res.body)
+      DouyinSdk.http_get(REFRESH_TOKEN + "?refresh_token=#{refresh_token}&client_key=#{client_key}&grant_type=refresh_token")
     end
+
+    #刷新refresh_token
+    def renew_refresh_token(client_key, refresh_token)
+      DouyinSdk.http_get(RENEW_REFRESH_TOKEN + "?client_key=#{client_key}&refresh_token=#{refresh_token}")
+    end
+
+
 
   end
 end

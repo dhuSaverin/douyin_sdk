@@ -44,6 +44,13 @@ $client.access_token(code)
 $client.refresh_token(refresh_token)
 ```
 
+* 刷新refresh_token
+
+通过旧的refresh_token获取新的refresh_token，调用后旧refresh_token会失效，新refresh_token有30天有效期。最多只能获取5次新的refresh_token，5次过后需要用户重新授权。
+```ruby
+$client.renew_refresh_token(client_key, refresh_token)
+```
+
 * 获取用户公开信息
 
 ```ruby
